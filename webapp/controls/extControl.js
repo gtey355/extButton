@@ -6,7 +6,7 @@ sap.ui.define([
 
 	return Control.extend("ns.extControl.controls.extControl", {
 		metadata: {
-			proprertes: {
+			properties: {
 				"propID": "string",
 				"propName": "string",
 				"allowHover": {
@@ -15,24 +15,30 @@ sap.ui.define([
 				},
 				"myText": "string",
 				"width": {
-					type: "sap.ui.core.CCSSize",
+					type: "sap.ui.core.CSSSize",
 					defaultValue: "100px"
 				},
-				"heigth": {
-					type: "sap.ui.core.CCSSize",
+				"height": {
+					type: "sap.ui.core.CSSSize",
 					defaultValue: "100px"
 				}
 			},
+
 			events: {
 				"hover": {}
 			},
 			aggregations: {
-				"header": {
-					type: "sap.ui.core.Control",
-					multiple: true,
-					singulagName: "header"
+				content: {
+					type: "sap.ui.core.Control"
 				}
-			}
+			},
+			defaultAggregation: "content"
+
+		},
+		init: function () {
+			//initialisation code, in this case, ensure css is imported
+			var libraryPath = jQuery.sap.getModulePath("ns.extControl"); //get the server location of the ui library
+			jQuery.sap.includeStyleSheet(libraryPath + "/css/ext.css"); //specify the css path relative from the ui folder
 		},
 		onmouseover: function (evt) {
 			if (this.getAllowHover()) {

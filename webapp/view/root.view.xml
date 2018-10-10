@@ -6,7 +6,9 @@
 				<content>
 					 <Button text="test button"/>
 					 <cust:extControl propName="test name of extcotrol">
-					 	
+					 	<cust:content>
+					 		<Text text="fff"/>
+					 	</cust:content>
 					 </cust:extControl>	
 				</content>
 			</Page>
