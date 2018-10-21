@@ -4,10 +4,10 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					 <Button text="test button"/>
-					 <cust:extControl propName="test name of extcotrol">
+					 
+					 <cust:extControl propName="test name of extcotrol" class="sapUiSmallMargin">
 					 	<cust:content>
-					 		<Text text="fff"/>
+					 		<Button text="Click me" class="sapUiSmallMargin" visible="true" type="Transparent"/>
 					 	</cust:content>
 					 </cust:extControl>	
 				</content>
